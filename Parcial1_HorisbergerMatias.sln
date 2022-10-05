@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parcial1_HorisbergerMatias", "Parcial1_HorisbergerMatias\Parcial1_HorisbergerMatias.csproj", "{CC777F9F-5099-42AB-AF05-77AAD99CADC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases_HorisbergerMatias", "Clases_HorisbergerMatias\Clases_HorisbergerMatias.csproj", "{EBAF415D-619B-4755-98F6-A0D2F92A2FF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC777F9F-5099-42AB-AF05-77AAD99CADC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC777F9F-5099-42AB-AF05-77AAD99CADC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC777F9F-5099-42AB-AF05-77AAD99CADC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC777F9F-5099-42AB-AF05-77AAD99CADC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAF415D-619B-4755-98F6-A0D2F92A2FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAF415D-619B-4755-98F6-A0D2F92A2FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAF415D-619B-4755-98F6-A0D2F92A2FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAF415D-619B-4755-98F6-A0D2F92A2FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0ABD7F1-4E55-4FD0-AA62-CDA4348A77CE}
+	EndGlobalSection
+EndGlobal

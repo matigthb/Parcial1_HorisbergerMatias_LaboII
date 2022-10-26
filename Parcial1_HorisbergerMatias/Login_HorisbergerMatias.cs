@@ -56,5 +56,22 @@ namespace Parcial1_HorisbergerMatias
         {
             
         }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            if (panelAyuda.Visible == true)
+            {
+                panelAyuda.Visible = false;
+            }
+            else
+            {
+                panelAyuda.Visible = true;
+            }
+        }
+
+        private void btnCerrarAyuda_Click(object sender, EventArgs e)
+        {
+            panelAyuda.Visible = false;
+        }
     }
 }

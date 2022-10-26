@@ -42,6 +42,7 @@ namespace Parcial1_HorisbergerMatias
             this.cmbDestino = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbOrigen = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@ namespace Parcial1_HorisbergerMatias
             // 
             // cmbCrucero
             // 
+            this.cmbCrucero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCrucero.FormattingEnabled = true;
             this.cmbCrucero.Location = new System.Drawing.Point(264, 17);
             this.cmbCrucero.Name = "cmbCrucero";
@@ -72,6 +74,7 @@ namespace Parcial1_HorisbergerMatias
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.chkExtraRegional);
             this.panel1.Controls.Add(this.chkRegional);
             this.panel1.Controls.Add(this.button3);
@@ -94,12 +97,13 @@ namespace Parcial1_HorisbergerMatias
             this.chkExtraRegional.BackColor = System.Drawing.Color.Transparent;
             this.chkExtraRegional.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkExtraRegional.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chkExtraRegional.Location = new System.Drawing.Point(476, 87);
+            this.chkExtraRegional.Location = new System.Drawing.Point(477, 87);
             this.chkExtraRegional.Name = "chkExtraRegional";
             this.chkExtraRegional.Size = new System.Drawing.Size(108, 19);
             this.chkExtraRegional.TabIndex = 11;
             this.chkExtraRegional.Text = "Extra-Regional";
             this.chkExtraRegional.UseVisualStyleBackColor = false;
+            this.chkExtraRegional.CheckedChanged += new System.EventHandler(this.chkExtraRegional_CheckedChanged);
             // 
             // chkRegional
             // 
@@ -107,12 +111,13 @@ namespace Parcial1_HorisbergerMatias
             this.chkRegional.BackColor = System.Drawing.Color.Transparent;
             this.chkRegional.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkRegional.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chkRegional.Location = new System.Drawing.Point(383, 87);
+            this.chkRegional.Location = new System.Drawing.Point(384, 87);
             this.chkRegional.Name = "chkRegional";
             this.chkRegional.Size = new System.Drawing.Size(74, 19);
             this.chkRegional.TabIndex = 10;
             this.chkRegional.Text = "Regional";
             this.chkRegional.UseVisualStyleBackColor = false;
+            this.chkRegional.CheckedChanged += new System.EventHandler(this.chkRegional_CheckedChanged);
             // 
             // button3
             // 
@@ -122,7 +127,7 @@ namespace Parcial1_HorisbergerMatias
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Square721 BT", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.SeaShell;
-            this.button3.Location = new System.Drawing.Point(212, 243);
+            this.button3.Location = new System.Drawing.Point(126, 246);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 34);
             this.button3.TabIndex = 9;
@@ -166,10 +171,12 @@ namespace Parcial1_HorisbergerMatias
             // 
             // cmbDestino
             // 
+            this.cmbDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDestino.Enabled = false;
             this.cmbDestino.FormattingEnabled = true;
             this.cmbDestino.Location = new System.Drawing.Point(397, 58);
             this.cmbDestino.Name = "cmbDestino";
-            this.cmbDestino.Size = new System.Drawing.Size(176, 23);
+            this.cmbDestino.Size = new System.Drawing.Size(175, 23);
             this.cmbDestino.TabIndex = 6;
             // 
             // label2
@@ -186,11 +193,28 @@ namespace Parcial1_HorisbergerMatias
             // 
             // cmbOrigen
             // 
+            this.cmbOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOrigen.FormattingEnabled = true;
             this.cmbOrigen.Location = new System.Drawing.Point(126, 58);
             this.cmbOrigen.Name = "cmbOrigen";
             this.cmbOrigen.Size = new System.Drawing.Size(162, 23);
             this.cmbOrigen.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Square721 BT", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.SeaShell;
+            this.button1.Location = new System.Drawing.Point(332, 246);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 34);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Cerrar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CrearViajes_HorisbergerMatias
             // 
@@ -222,5 +246,6 @@ namespace Parcial1_HorisbergerMatias
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox chkExtraRegional;
         private System.Windows.Forms.CheckBox chkRegional;
+        private System.Windows.Forms.Button button1;
     }
 }

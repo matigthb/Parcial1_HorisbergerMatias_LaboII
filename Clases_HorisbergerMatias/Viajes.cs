@@ -263,6 +263,7 @@ namespace Clases_HorisbergerMatias
             return base.Equals(obj);
         }
 
+      
         /// <summary>
         /// override metodo gethashcode
         /// </summary>

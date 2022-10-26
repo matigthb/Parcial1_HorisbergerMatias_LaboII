@@ -50,7 +50,7 @@ namespace Parcial1_HorisbergerMatias
         /// <param name="e"></param>
         private void CrearViajes_HorisbergerMatias_Load(object sender, EventArgs e)
         {
-            chkRegional.Checked = true;
+            fecFecha.MinDate = DateTime.Now;
             CargarCombos();
         }
 
@@ -66,28 +66,22 @@ namespace Parcial1_HorisbergerMatias
 
             cmbOrigen.Items.Add("Buenos Aires (Argentina)");
 
-            if(chkRegional.Checked == true)
+            foreach(Destino item in destinos)
             {
-                foreach(Destino item in destinos)
+                if(item.eRegional == ERegional.Si)
                 {
-                    if(item.eRegional == ERegional.Si)
-                    {
-                        regionales.Add(item);
-                        cmbDestino.Items.Add(item.ToString());
-                    }
+                    regionales.Add(item);
                 }
             }
-            else
+
+            foreach (Destino item in destinos)
             {
-                foreach (Destino item in destinos)
+                if (item.eRegional == ERegional.No)
                 {
-                    if (item.eRegional == ERegional.No)
-                    {
-                        extraRegionales.Add(item);
-                        cmbDestino.Items.Add(item.ToString());
-                    }
+                    extraRegionales.Add(item);
                 }
             }
+            
         }
 
         /// <summary>
@@ -100,25 +94,84 @@ namespace Parcial1_HorisbergerMatias
             Viajes_HorisbergerMatias frm = new Viajes_HorisbergerMatias();
             Viajes viajeNuevo;
 
-            if(cmbCrucero.Text != "" && cmbOrigen.Text != "" && cmbDestino.Text != "")
+            if (cmbCrucero.Text != "" && cmbOrigen.Text != "" && cmbDestino.Text != "")
             {
+
                 if (chkRegional.Checked == true)
-                { 
-                    viajeNuevo = new Viajes(viajesDatos.viajes[viajesDatos.viajes.Count].Id + 1, this.cmbOrigen.Text, regionales[cmbDestino.SelectedIndex], this.fecFecha.Value.Date, cruceros[cmbCrucero.SelectedIndex], Viajes.DeterminarDuracionRegional(),0,0,57,ERegional.Si, new List<GrupoFamiliar>(),0);
+                {
+                    viajeNuevo = new Viajes(viajesDatos.viajes[viajesDatos.viajes.Count - 1].Id + 1, this.cmbOrigen.Text, regionales[cmbDestino.SelectedIndex], this.fecFecha.Value.Date, cruceros[cmbCrucero.SelectedIndex], Viajes.DeterminarDuracionRegional(), 0, 0, 57, ERegional.Si, new List<GrupoFamiliar>(), 0);
                 }
                 else
                 {
-                    viajeNuevo = new Viajes(viajesDatos.viajes[viajesDatos.viajes.Count].Id + 1, this.cmbOrigen.Text, extraRegionales[cmbDestino.SelectedIndex], this.fecFecha.Value.Date, cruceros[cmbCrucero.SelectedIndex], Viajes.DeterminarDuracionExtraRegional(),0,0,120,ERegional.No, new List<GrupoFamiliar>(),0);
+                    viajeNuevo = new Viajes(viajesDatos.viajes[viajesDatos.viajes.Count - 1].Id + 1, this.cmbOrigen.Text, extraRegionales[cmbDestino.SelectedIndex], this.fecFecha.Value.Date, cruceros[cmbCrucero.SelectedIndex], Viajes.DeterminarDuracionExtraRegional(), 0, 0, 120, ERegional.No, new List<GrupoFamiliar>(), 0);
                 }
 
                 viajesDatos.viajes.Add(viajeNuevo);
+
+                if(MessageBox.Show("Viaje agregado correctamente, Desea agregar otro?", "Operación exitosa.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    frm.viajes = viajesDatos;
+                    frm.Show();
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No todos los datos están completos.", "Cuidado!",  MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
-            frm.viajes = viajesDatos;
-            frm.Show();
-            this.Close();
+
         }
 
-      
+        private void chkRegional_CheckedChanged(object sender, EventArgs e)
+        {
+            this.cmbDestino.Text = "";
+            this.cmbDestino.Items.Clear();
+
+            if (this.chkExtraRegional.Checked == false && this.chkRegional.Checked == false)
+            {
+                this.cmbDestino.Enabled = false;
+            }
+            else
+            {
+                if (this.chkRegional.Checked == true)
+                {
+                    this.cmbDestino.Enabled = true;
+                    this.chkExtraRegional.Checked = false;
+                    foreach (Destino item in regionales)
+                    {
+                        cmbDestino.Items.Add(item.ToString());
+                    }
+                }
+            }
+        }
+
+        private void chkExtraRegional_CheckedChanged(object sender, EventArgs e)
+        {
+            this.cmbDestino.Text = "";
+            this.cmbDestino.Items.Clear();
+
+            if (this.chkExtraRegional.Checked == false && this.chkRegional.Checked == false)
+            {
+                this.cmbDestino.Enabled = false;
+            }
+            else
+            {
+                if (this.chkExtraRegional.Checked == true)
+                {
+                    this.cmbDestino.Enabled = true;
+                    this.chkRegional.Checked = false;
+                    foreach (Destino item in extraRegionales)
+                    {
+                        cmbDestino.Items.Add(item.ToString());
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

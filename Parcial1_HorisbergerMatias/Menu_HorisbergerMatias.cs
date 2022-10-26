@@ -44,7 +44,8 @@ namespace Parcial1_HorisbergerMatias
             Viajes_HorisbergerMatias frm = new Viajes_HorisbergerMatias();
 
             frm.viajes = viajesRegistrados;
-            frm.ShowDialog();
+
+            frm.Show();
         }
 
 
@@ -90,6 +91,73 @@ namespace Parcial1_HorisbergerMatias
 
             frm.viajes = viajesRegistrados;
             frm.ShowDialog();
+        }
+
+        private void btnAyudaViajes_Click(object sender, EventArgs e)
+        {
+            if(panelAyuda.Visible == true)
+            {
+                panelAyuda.Visible = false;
+            }
+            else
+            {
+                panelAyuda.Visible = true;
+                lblAyuda.Text = "Pantalla para visualizar viajes disponibles, poder crearlos y visualizar pasajeros.";
+            }
+        }
+
+        private void btnCerrarAyuda_Click(object sender, EventArgs e)
+        {
+            panelAyuda.Visible = false;
+        }
+
+        private void btnAyudaCruceros_Click(object sender, EventArgs e)
+        {
+            if (panelAyuda.Visible == true)
+            {
+                panelAyuda.Visible = false;
+            }
+            else
+            {
+                panelAyuda.Visible = true;
+                lblAyuda.Text = "Pantalla para visualizar cruceros con toda su información, incluyendo estado.";
+            }
+        }
+
+        private void btnAyudaPasajes_Click(object sender, EventArgs e)
+        {
+            if (panelAyuda.Visible == true)
+            {
+                panelAyuda.Visible = false;
+            }
+            else
+            {
+                panelAyuda.Visible = true;
+                lblAyuda.Text = "Pantalla para visualizar vender pasajes, ingresando los datos de el/los pasajero(s) a ingresar.";
+            }
+        }
+
+        private void btnAyudaEstadisticas_Click(object sender, EventArgs e)
+        {
+            if (panelAyuda.Visible == true)
+            {
+                panelAyuda.Visible = false;
+            }
+            else
+            {
+                panelAyuda.Visible = true;
+                lblAyuda.Text = "Pantalla para visualizar estadísticas históricas de la empresa.";
+            }
+        }
+
+        private void Menu_HorisbergerMatias_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -71,9 +71,12 @@ namespace Parcial1_HorisbergerMatias
         /// <param name="e"></param>
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBox2.Items.Clear();
-            
-            listBox2.Items.Add(auxiliarPasajeros[listBox1.SelectedIndex].pasaporte.ToString());
+            if(listBox1.SelectedIndex != -1)
+            {
+                richTextBox1.Text = "";
+
+                richTextBox1.Text = auxiliarPasajeros[listBox1.SelectedIndex].pasaporte.ToString();
+            }
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)

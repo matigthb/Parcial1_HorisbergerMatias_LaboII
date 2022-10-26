@@ -30,6 +30,9 @@ namespace Parcial1_HorisbergerMatias
         {
             SetupDataGridView();
             PopulateDataGridView();
+            fecNacimiento.MaxDate = DateTime.Now;
+            fecEmision.MaxDate = DateTime.Now;
+            fecCaducidad.MinDate = DateTime.Now;
             cmbValijas.SelectedIndex = 0;
         }
 
@@ -135,8 +138,35 @@ namespace Parcial1_HorisbergerMatias
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
+
             if (Validaciones(grpEquipaje) == true && Validaciones(grpPasajero) == true && Validaciones(grpPasaporte) == true && Validaciones(grpPrecio) == true)
             {
+                /*int viajeId = Convert.ToInt32(dataViajes.CurrentRow.Cells["Id"].Value);
+
+                foreach (Viajes item in viajes.viajes)
+                {
+                    if (item.Id == viajeId)
+                    {
+                        if (button1.Text == "TURISTA")
+                        { 
+                            if (item.CantCamTurista + listPasajeros.Items.Count + 1 > item.Crucero.cantCamTurista)
+                            {
+                                MessageBox.Show("No hay suficientes camarotes turista disponibles.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            if (button1.Text == "PREMIUM" && item.CantCamPremium >= item.Crucero.cantCamPremium)
+                            {
+                                MessageBox.Show("No hay camarotes disponibles para la clase premium.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                break;
+                            }
+                        }
+                    }
+                }*/
+
+                
                 EClase clase;
 
                 if(button1.Text == "TURISTA")
@@ -149,13 +179,16 @@ namespace Parcial1_HorisbergerMatias
                 }
 
                 Pasajero pasajero = new Pasajero(txtNombre.Text, txtApellido.Text, int.Parse(txtEdad.Text), new Pasaporte(int.Parse(txtDNI.Text), txtSexo.Text,
-                   fecNacimiento.Value, txtNacionalidad.Text, txtProvincia.Text, txtCodigoPais.Text, fecEmision.Value, fecCaducidad.Value, txtNumeroPasaporte.Text), 
-                   clase, checkBox1.Checked, Convert.ToDouble(txtPesoBolso.Text), Convert.ToDouble(txtPesoVal1.Text), Convert.ToDouble(txtPesoVal2.Text));
+                    fecNacimiento.Value, txtNacionalidad.Text, txtProvincia.Text, txtCodigoPais.Text, fecEmision.Value, fecCaducidad.Value, txtNumeroPasaporte.Text), 
+                    clase, checkBox1.Checked, Convert.ToDouble(txtPesoBolso.Text), Convert.ToDouble(txtPesoVal1.Text), Convert.ToDouble(txtPesoVal2.Text));
 
                 pasajerosAuxiliar.pasajeros.Add(pasajero);
                 pasajerosAuxiliar.precioNetoAPagar = pasajerosAuxiliar.precioNetoAPagar + Convert.ToDouble(txtNeto.Text);
+                button1.Enabled = false;
+                dataViajes.Enabled = false;
                 ActualizarLista(); 
                 Limpiar();
+                
             }
         }
 
@@ -225,7 +258,14 @@ namespace Parcial1_HorisbergerMatias
             {
                 if (item is TextBox && item.Visible == true && item.Text == "")
                 {
-                    MessageBox.Show("Existe un campo vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Existe un campo vacío", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    retorno = false;
+                    break;
+                }
+
+                if (item is TextBox && (item.Name == "txtPesoBolso" || item.Name == "txtPesoVal1" || item.Name == "txtPesoVal2") && (Convert.ToInt32(item.Text) > 25 || Convert.ToInt32(item.Text) < 0 ))
+                {
+                    MessageBox.Show("El peso del equipaje no es válido (0-25)", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     retorno = false;
                     break;
                 }
@@ -384,13 +424,16 @@ namespace Parcial1_HorisbergerMatias
             {
                 button1.Text = "PREMIUM";
                 cmbValijas.Items.Add("2");
+                txtCosto.Text = dataViajes.CurrentRow.Cells["Costo Total Premium"].Value.ToString();
             }
             else
             {
                 button1.Text = "TURISTA";
                 cmbValijas.Items.RemoveAt(2);
+                txtCosto.Text = dataViajes.CurrentRow.Cells["Costo Total Turista"].Value.ToString();
             }
-            
+
+            txtNeto.Text = (Convert.ToDouble(txtCosto.Text) + ((Convert.ToDouble(txtCosto.Text) * 21) / 100) + ((Convert.ToDouble(txtCosto.Text) * 4) / 100)).ToString();
         }
 
         /// <summary>
@@ -447,6 +490,9 @@ namespace Parcial1_HorisbergerMatias
         private void button4_Click(object sender, EventArgs e)
         {
             int viajeId;
+            string destino="";
+            string crucero="";
+            string fecha="";
 
             if(listPasajeros.Items.Count > 0)
             {
@@ -456,31 +502,168 @@ namespace Parcial1_HorisbergerMatias
                 {
                     if(item.Id == viajeId)
                     {
+                        if (button1.Text == "TURISTA")
+                        {
+                            if (item.CantCamTurista + listPasajeros.Items.Count > item.Crucero.cantCamPremium)
+                            {
+                                MessageBox.Show("No hay suficientes camarotes turista disponibles.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                break;
+                            }
+                            else
+                            {
+                                item.CantCamTurista += listPasajeros.Items.Count;
+                            }
+                        }
+                        else
+                        {
+                            if (item.CantCamPremium + listPasajeros.Items.Count > item.Crucero.cantCamPremium)
+                            {
+                                MessageBox.Show("No hay suficientes camarotes premium disponibles.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                break;
+                            }
+                            else
+                            {
+                                item.CantCamPremium += listPasajeros.Items.Count;
+                            }
+                        }
+
                         item.GrupoFamiliar.Add(pasajerosAuxiliar);
+                        
+                        destino = item.Destino.ToString();
+                        crucero = item.Crucero.nombre;
+                        fecha = item.Fecha.ToString();
+
+                        MessageBox.Show("Pasajero(s) añadido(s) al viaje hacia " + destino + "\nCrucero: " + crucero + " Fecha: " + fecha, "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
-                }
-
-                if(MessageBox.Show("Pasajero(s) añadido(s) al viaje, Desea continuar vendiendo?", "ERROR", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
-                {
-                    pasajerosAuxiliar.pasajeros.Clear();
-                    Limpiar();
-                    ActualizarLista();
-                }
-                else
-                {
-                
-
-                    this.Close();
-                    
                 }
             }
             else
             {
                 MessageBox.Show("Debe cargar al menos un pasajero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtNacionalidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtProvincia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCodigoPais_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSexo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPesoBolso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPesoVal1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPesoVal2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            if (panelAyuda.Visible == true)
+            {
+                panelAyuda.Visible = false;
+            }
+            else
+            {
+                panelAyuda.Visible = true;
+            }
+        }
+
+        private void btnCerrarAyuda_Click(object sender, EventArgs e)
+        {
+            panelAyuda.Visible = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Está seguro que desea abandonar la operación?", "El progreso no se guardará.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if(listPasajeros.SelectedIndex != -1)
+            {
+                listPasajeros.Items.RemoveAt(listPasajeros.SelectedIndex);
+                txtNeto.Text = "";
+            }
         }
     }
 }

@@ -36,6 +36,7 @@ namespace Parcial1_HorisbergerMatias
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtBodega = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,7 +48,7 @@ namespace Parcial1_HorisbergerMatias
             this.label4 = new System.Windows.Forms.Label();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblEstado = new System.Windows.Forms.Label();
+            this.btnCerrarAyuda = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +74,7 @@ namespace Parcial1_HorisbergerMatias
             // 
             // lblCrucero
             // 
+            this.lblCrucero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCrucero.AutoSize = true;
             this.lblCrucero.BackColor = System.Drawing.Color.Transparent;
             this.lblCrucero.Font = new System.Drawing.Font("Try Happiness Demo", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
@@ -85,12 +87,12 @@ namespace Parcial1_HorisbergerMatias
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAnterior.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAnterior.BackColor = System.Drawing.Color.DimGray;
             this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAnterior.Font = new System.Drawing.Font("Square721 BT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAnterior.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnAnterior.Location = new System.Drawing.Point(42, 34);
+            this.btnAnterior.Location = new System.Drawing.Point(42, 36);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(68, 34);
             this.btnAnterior.TabIndex = 7;
@@ -105,7 +107,7 @@ namespace Parcial1_HorisbergerMatias
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSiguiente.Font = new System.Drawing.Font("Square721 BT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSiguiente.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnSiguiente.Location = new System.Drawing.Point(458, 34);
+            this.btnSiguiente.Location = new System.Drawing.Point(458, 36);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(68, 34);
             this.btnSiguiente.TabIndex = 8;
@@ -115,6 +117,8 @@ namespace Parcial1_HorisbergerMatias
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox1.Controls.Add(this.lblEstado);
@@ -136,6 +140,17 @@ namespace Parcial1_HorisbergerMatias
             this.groupBox1.Size = new System.Drawing.Size(544, 366);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.BackColor = System.Drawing.Color.DarkRed;
+            this.lblEstado.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lblEstado.Location = new System.Drawing.Point(404, 24);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(121, 39);
+            this.lblEstado.TabIndex = 16;
+            this.lblEstado.Text = "Completo";
+            this.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
@@ -239,16 +254,21 @@ namespace Parcial1_HorisbergerMatias
             this.label3.TabIndex = 1;
             this.label3.Text = "Matrícula:";
             // 
-            // lblEstado
+            // btnCerrarAyuda
             // 
-            this.lblEstado.BackColor = System.Drawing.Color.DarkRed;
-            this.lblEstado.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblEstado.Location = new System.Drawing.Point(371, 24);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(154, 68);
-            this.lblEstado.TabIndex = 16;
-            this.lblEstado.Text = "Completo";
-            this.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCerrarAyuda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCerrarAyuda.BackColor = System.Drawing.Color.DimGray;
+            this.btnCerrarAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCerrarAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCerrarAyuda.Font = new System.Drawing.Font("Square721 BT", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.btnCerrarAyuda.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCerrarAyuda.Location = new System.Drawing.Point(219, 498);
+            this.btnCerrarAyuda.Name = "btnCerrarAyuda";
+            this.btnCerrarAyuda.Size = new System.Drawing.Size(136, 41);
+            this.btnCerrarAyuda.TabIndex = 10;
+            this.btnCerrarAyuda.Text = "Cerrar";
+            this.btnCerrarAyuda.UseVisualStyleBackColor = false;
+            this.btnCerrarAyuda.Click += new System.EventHandler(this.btnCerrarAyuda_Click);
             // 
             // ViewCruceros_HorisbergerMatias
             // 
@@ -256,12 +276,14 @@ namespace Parcial1_HorisbergerMatias
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(568, 499);
+            this.ClientSize = new System.Drawing.Size(568, 551);
+            this.Controls.Add(this.btnCerrarAyuda);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.lblCrucero);
             this.Controls.Add(this.label2);
+            this.MinimumSize = new System.Drawing.Size(584, 590);
             this.Name = "ViewCruceros_HorisbergerMatias";
             this.Text = "Cruceros";
             this.Load += new System.EventHandler(this.ViewCruceros_HorisbergerMatias_Load);
@@ -292,5 +314,6 @@ namespace Parcial1_HorisbergerMatias
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Button btnCerrarAyuda;
     }
 }

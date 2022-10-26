@@ -140,7 +140,12 @@ namespace Parcial1_HorisbergerMatias
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+         
+        }
 
+        private void btnCerrarAyuda_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

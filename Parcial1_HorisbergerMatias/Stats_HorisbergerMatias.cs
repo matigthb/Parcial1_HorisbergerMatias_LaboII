@@ -297,7 +297,9 @@ namespace Parcial1_HorisbergerMatias
         {
             int contador;
 
-            foreach(Viajes item in viajes.viajes)
+            dataDestinos.Rows.Clear();
+
+            foreach (Viajes item in viajes.viajes)
             {
                 foreach(GrupoFamiliar grupo in item.GrupoFamiliar)
                 {
@@ -353,7 +355,7 @@ namespace Parcial1_HorisbergerMatias
         private string[] RowPasajeros(Pasajero pasajero, int total)
         {
             string[] row = { pasajero.ToString(), total.ToString() };
-
+            
             return row;
         }
 
@@ -403,6 +405,11 @@ namespace Parcial1_HorisbergerMatias
             groupBox1.Text = "PASAJEROS VIAJES";
             SetupPasajeros();
             GrillaPasajeros();
+        }
+
+        private void btnCerrarAyuda_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

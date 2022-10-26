@@ -32,28 +32,32 @@ namespace Parcial1_HorisbergerMatias
             this.dataViajes = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrarAyuda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataViajes)).BeginInit();
             this.SuspendLayout();
             // 
             // dataViajes
             // 
+            this.dataViajes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataViajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViajes.Location = new System.Drawing.Point(6, 7);
+            this.dataViajes.Location = new System.Drawing.Point(11, 12);
             this.dataViajes.Name = "dataViajes";
             this.dataViajes.RowTemplate.Height = 25;
-            this.dataViajes.Size = new System.Drawing.Size(1203, 478);
+            this.dataViajes.Size = new System.Drawing.Size(1325, 478);
             this.dataViajes.TabIndex = 0;
             this.dataViajes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViajes_CellContentClick);
             // 
             // button3
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.BackColor = System.Drawing.Color.DimGray;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Square721 BT", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button3.Location = new System.Drawing.Point(12, 499);
+            this.button3.Location = new System.Drawing.Point(12, 500);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(233, 50);
             this.button3.TabIndex = 7;
@@ -63,13 +67,13 @@ namespace Parcial1_HorisbergerMatias
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Square721 BT", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button1.Location = new System.Drawing.Point(970, 499);
+            this.button1.Location = new System.Drawing.Point(1103, 500);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(233, 50);
             this.button1.TabIndex = 8;
@@ -77,15 +81,33 @@ namespace Parcial1_HorisbergerMatias
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnCerrarAyuda
+            // 
+            this.btnCerrarAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarAyuda.BackColor = System.Drawing.Color.DimGray;
+            this.btnCerrarAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCerrarAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCerrarAyuda.Font = new System.Drawing.Font("Square721 BT", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.btnCerrarAyuda.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCerrarAyuda.Location = new System.Drawing.Point(636, 500);
+            this.btnCerrarAyuda.Name = "btnCerrarAyuda";
+            this.btnCerrarAyuda.Size = new System.Drawing.Size(135, 50);
+            this.btnCerrarAyuda.TabIndex = 9;
+            this.btnCerrarAyuda.Text = "Cerrar";
+            this.btnCerrarAyuda.UseVisualStyleBackColor = false;
+            this.btnCerrarAyuda.Click += new System.EventHandler(this.btnCerrarAyuda_Click);
+            // 
             // Viajes_HorisbergerMatias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
-            this.ClientSize = new System.Drawing.Size(1215, 561);
+            this.ClientSize = new System.Drawing.Size(1348, 563);
+            this.Controls.Add(this.btnCerrarAyuda);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataViajes);
+            this.MinimumSize = new System.Drawing.Size(1364, 602);
             this.Name = "Viajes_HorisbergerMatias";
             this.Text = "Viajes Disponibles";
             this.Load += new System.EventHandler(this.Viajes_HorisbergerMatias_Load);
@@ -99,5 +121,6 @@ namespace Parcial1_HorisbergerMatias
         private System.Windows.Forms.DataGridView dataViajes;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrarAyuda;
     }
 }

@@ -46,7 +46,7 @@ namespace Parcial1_HorisbergerMatias
 
             dataViajes.Name = "dataViajes";
             dataViajes.Location = new Point(8, 8);
-            dataViajes.Size = new Size(1203, 478);
+            dataViajes.Size = new Size(1325, 478);
             dataViajes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             dataViajes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataViajes.CellBorderStyle = DataGridViewCellBorderStyle.Single;
@@ -61,8 +61,8 @@ namespace Parcial1_HorisbergerMatias
             dataViajes.Columns[5].Name = "Camarotes Premium Disponibles";
             dataViajes.Columns[6].Name = "Costo Total Turista";
             dataViajes.Columns[7].Name = "Costo Total Premium";
-            dataViajes.Columns[8].Name = "Peso Disponible en Bodega";
-            dataViajes.Columns[9].Name = "Duración";
+            dataViajes.Columns[8].Name = "Duración";
+            dataViajes.Columns[9].Name = "Peso Disponible en Bodega";
             dataViajes.Columns[10].Name = "Id";
             dataViajes.Columns[3].DefaultCellStyle.Font = new Font(dataViajes.DefaultCellStyle.Font, FontStyle.Italic);
 
@@ -165,6 +165,11 @@ namespace Parcial1_HorisbergerMatias
             }
 
             return viajeEncontrado;        
+        }
+
+        private void btnCerrarAyuda_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

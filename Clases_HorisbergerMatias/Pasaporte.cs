@@ -99,15 +99,15 @@ namespace Clases_HorisbergerMatias
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"DNI: {this.dni}\n");
-            sb.AppendLine($"Sexo: {this.sexo}\n");
-            sb.AppendLine($"Fecha Nacimiento: {this.fechaNacimiento}\n");
-            sb.AppendLine($"Nacionalidad: {this.nacionalidad}\n");
-            sb.AppendLine($"Provincia de Nacimiento: {this.provinciaNacimiento}\n");
-            sb.AppendLine($"Codigo de Pais de Nacimiento: {this.codigoPaisNacimiento}\n");
-            sb.AppendLine($"Fecha de expedicion de Pasaporte: {this.fechaExpedicion}\n");
-            sb.AppendLine($"Fecha de caducidad de Pasaporte: {this.fechaCaducidad}\n");
-            sb.AppendLine($"Numero de Pasaporte: {this.numeroPasaporte}\n");
+            sb.AppendLine($"DNI: {this.dni}");
+            sb.AppendLine($"Sexo: {this.sexo}");
+            sb.AppendLine($"Fecha Nacimiento: {this.fechaNacimiento}");
+            sb.AppendLine($"Nacionalidad: {this.nacionalidad}");
+            sb.AppendLine($"Provincia de Nacimiento: {this.provinciaNacimiento}");
+            sb.AppendLine($"Codigo de Pais de Nacimiento: {this.codigoPaisNacimiento}");
+            sb.AppendLine($"Fecha de expedicion de Pasaporte: {this.fechaExpedicion}");
+            sb.AppendLine($"Fecha de caducidad de Pasaporte: {this.fechaCaducidad}");
+            sb.AppendLine($"Numero de Pasaporte: {this.numeroPasaporte}");
 
             return sb.ToString();
         }

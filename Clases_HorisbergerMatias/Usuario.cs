@@ -44,10 +44,10 @@ namespace Clases_HorisbergerMatias
         {
             List<Usuario> usuarios = new List<Usuario>()
             {
-                new Usuario(){ usuarioId = "matias12", usuarioPass="karasuno"},
-                new Usuario(){ usuarioId = "matias23", usuarioPass="karasunoa"},
-                new Usuario(){ usuarioId = "1", usuarioPass="1"},
-                new Usuario(){ usuarioId = "matias45", usuarioPass="karasunoa"}
+                new Usuario(){ usuarioId = "admin1", usuarioPass="utn123"},
+                new Usuario(){ usuarioId = "admin2", usuarioPass="utn456"},
+                new Usuario(){ usuarioId = "admin3", usuarioPass="utn789"},
+                new Usuario(){ usuarioId = "admin4", usuarioPass="utn753"}
                 
             };
 

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Clases_HorisbergerMatias.Cruceros">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAQAAAAAAAAAACEgAAAAAAAAAQAAIBACAAAIAABAiA=</HashCode>
+      <FileName>Cruceros.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Destino">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgEAAAAAAAAAIAIAAAAAAEAAAAiA=</HashCode>
+      <FileName>Destino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.GrupoFamiliar">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAIAAA=</HashCode>
+      <FileName>GrupoFamiliar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Pasajero">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAQAAADEgAAAAAAAAAAAAIAAAMICAAAAAAA=</HashCode>
+      <FileName>Pasajero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Pasaporte">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAABAwCAAEIEgAAAACACAQAgAIAAAAQBABACAQA=</HashCode>
+      <FileName>Pasaporte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Sal_Cafeteria">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABQAAAAAgAQAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sal_Cafeteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Sal_CanchaDeVoley">
+    <Position X="15.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAQAAAAAgAAAACAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sal_CanchaDeVoley.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Sal_Casino">
+    <Position X="10.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAgAAAAAAAAAAAAIAAAEAAAAAIAAA=</HashCode>
+      <FileName>Sal_Casino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Sal_Comedor">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAQAAgAAAAAAAAAAAAIAAAAAAAAAgAAA=</HashCode>
+      <FileName>Sal_Comedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Sal_Piscina">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAQAAACAgAAAACAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sal_Piscina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Salones">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAQAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Salones.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Usuario">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAiAAAAQAAAIAAAAAAAAAAAiA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.Viajes">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAKEgEABRAEAAUggAAMAAAABEADAIBSAQAAMgAAAiI=</HashCode>
+      <FileName>Viajes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Clases_HorisbergerMatias.ViajesRegistrados">
+    <Position X="4" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAIAAAAAAEgAAABgAAAAAAAIAQAAAAAAAAAAA=</HashCode>
+      <FileName>ViajesRegistrados.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
